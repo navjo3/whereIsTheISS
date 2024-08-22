@@ -1,3 +1,15 @@
 #issMap {
-    height: 180px;
+    height: 380px;
+}
+
+.custom-tooltip {
+    opacity: 0.8; /* Reduce the opacity of the tooltip */
+    background-color: white; /* Set the background color */
+    padding: 5px; /* Add some padding for better readability */
+    border-radius: 3px; /* Optional: round the corners */
+}
+
+.leaflet-tooltip {
+    background-color: transparent; /* Make sure the Leaflet default background is transparent */
+    border: none; /* Remove the default border */
 }
