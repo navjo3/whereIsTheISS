@@ -1,4 +1,4 @@
-const map = L.map('issMap').setView([0, 0], 1);
+const map = L.map('issMap').setView([0, 0], 3);
 
 const iss_url = 'https://api.wheretheiss.at/v1/satellites/25544';
 
@@ -19,7 +19,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-
+let firstTime = true;
 
 //function to fetch iss location json
 async function getISS() {
@@ -32,11 +32,18 @@ async function getISS() {
 
     marker.setLatLng([latitude,longitude]);
 
+    if (firstTime){
+        map.setView([latitude,longitude],3);
+        firstTime =false;
+    }
+
     document.getElementById('lat').textContent = latitude;
     document.getElementById('lon').textContent = longitude;
 
     marker.bindTooltip('<div class="custom-tooltip">Latitude: ${latitude}, <br> Longitude: ${longitude}').openTooltip();
 }
+
+setInterval(getISS, 1000)
 
 //call function
 getISS();

@@ -1,5 +1,15 @@
+/* Center the container div with a width of 70vw */
+#container {
+    width: 70vw;
+    margin: 0 auto;        /* Center the container horizontally */
+    padding: 20px;
+    text-align: center;    /* Center the text inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    min-height: 70vh;
+}
+
 #issMap {
-    height: 380px;
+    height: 500px;
 }
 
 .custom-tooltip {
